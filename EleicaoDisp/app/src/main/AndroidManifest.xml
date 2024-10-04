@@ -13,6 +13,12 @@
         android:theme="@style/Theme.EleicaoDisp"
         tools:targetApi="31">
         <activity
+            android:name=".Resultado"
+            android:exported="false" />
+        <activity
+            android:name=".InfoEntrevistado"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="false" />
         <activity
