@@ -42,7 +42,7 @@ public class Login extends AppCompatActivity {
                     if (etUsuario.getText().toString().equals(CadLogin.usuario[i]) && etSenha.getText().toString().equals(CadLogin.senha[i])) {
                         loginBS = true;
                         if (etUsuario.getText().toString().equals("entrevistado")) {
-                            Intent proxPage = new Intent(Login.this, InfoEntrevistado.class);
+                            Intent proxPage = new Intent(Login.this, PesqRes.class);
                             startActivity(proxPage);
                             break;
                         }else if (etUsuario.getText().toString().equals("admin")) {
