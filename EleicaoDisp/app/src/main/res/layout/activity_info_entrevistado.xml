@@ -186,7 +186,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="36dp"
         android:text="Dia:"
         app:layout_constraintEnd_toStartOf="@+id/editTextText5"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,8 +6,8 @@ import android.provider.Settings;
 
 public class CadLogin {
 
-    public static String usuario[] = {"admin", "entrevistado"};
-    public static String senha[] = {"admin" , "entrevistado"};
+    public static String[] usuario = {"admin", "entrevistado"};
+    public static String[] senha = {"admin" , "entrevistado"};
 
 
     public String[] getUsuario() {
