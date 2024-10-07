@@ -10,8 +10,6 @@ public class VarEleitoral {
     public VarEleitoral() {
     }
 
-
-
     public static void addNome(String nome) {
         if (nome!=null) {
             if (contadorNomes.containsKey(nome)) {
@@ -25,8 +23,8 @@ public class VarEleitoral {
     public static String getNomeCont(){
         StringBuilder candidato = new StringBuilder();
 
-        for (Map.Entry<String, Integer> entry: contadorNomes.entrySet()){
-            candidato.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        for (Map.Entry<String, Integer> entrada: contadorNomes.entrySet()){
+            candidato.append(entrada.getKey()).append(": ").append(entrada.getValue()).append("\n");
         }
         return candidato.toString();
     }
