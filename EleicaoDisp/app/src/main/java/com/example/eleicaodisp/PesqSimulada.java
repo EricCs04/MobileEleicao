@@ -1,6 +1,8 @@
 package com.example.eleicaodisp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
@@ -31,6 +33,16 @@ public class PesqSimulada extends AppCompatActivity {
         rbIndeciso = findViewById(R.id.rbIndeciso);
         rbNaoSabe = findViewById(R.id.rbNaosabe);
         btRegSimulada = findViewById(R.id.btRegSimulada);
+
+
+        btRegSimulada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cadastro = new Intent(PesqSimulada.this, InfoEntrevistado.class);
+                startActivity(cadastro);
+                finish();
+            }
+        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
