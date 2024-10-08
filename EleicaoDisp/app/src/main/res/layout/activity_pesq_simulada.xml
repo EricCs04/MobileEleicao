@@ -28,7 +28,6 @@
             android:id="@+id/rbC1"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:checked="false"
             android:drawableRight="@drawable/back"
             android:text="Cléber Bombom" />
 

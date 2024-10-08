@@ -19,9 +19,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
         android:text="Hora:"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText6"
+        app:layout_constraintEnd_toStartOf="@+id/etEntHora"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextText5"
+        app:layout_constraintStart_toEndOf="@+id/etEntDia"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <ImageView
@@ -49,14 +49,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/etEntNum"
         android:layout_width="236dp"
         android:layout_height="40dp"
         android:layout_marginEnd="87dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintBottom_toTopOf="@+id/etEntIdade"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView9" />
 
@@ -67,7 +67,7 @@
         android:layout_marginStart="42dp"
         android:layout_marginTop="44dp"
         android:text="Idade:"
-        app:layout_constraintEnd_toStartOf="@+id/editTextDate"
+        app:layout_constraintEnd_toStartOf="@+id/etEntIdade"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -79,24 +79,24 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="205dp"
         android:text="Nome:"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
+        app:layout_constraintEnd_toStartOf="@+id/etEntNome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/etEntCivil"
         android:layout_width="237dp"
         android:layout_height="40dp"
         android:layout_marginEnd="87dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText4"
+        app:layout_constraintBottom_toTopOf="@+id/etEntNum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/etEntNome"
         android:layout_width="236dp"
         android:layout_height="40dp"
         android:layout_marginTop="44dp"
@@ -104,21 +104,21 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText3"
+        app:layout_constraintBottom_toTopOf="@+id/etEntCivil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.45" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/etEntIdade"
         android:layout_width="63dp"
         android:layout_height="40dp"
         android:layout_marginEnd="23dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText5"
+        app:layout_constraintBottom_toTopOf="@+id/etEntDia"
         app:layout_constraintEnd_toStartOf="@+id/textView11"
         app:layout_constraintStart_toEndOf="@+id/textView10" />
 
@@ -129,10 +129,10 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:text="Telefone:"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText4"
+        app:layout_constraintEnd_toStartOf="@+id/etEntNum"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintTop_toBottomOf="@+id/etEntCivil" />
 
     <TextView
         android:id="@+id/textView8"
@@ -141,7 +141,7 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="44dp"
         android:text="Estado Civil:"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText3"
+        app:layout_constraintEnd_toStartOf="@+id/etEntCivil"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -158,7 +158,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/etEntIdade" />
 
     <TextView
         android:id="@+id/textView11"
@@ -167,19 +167,19 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:text="Sexo:"
-        app:layout_constraintStart_toEndOf="@+id/editTextDate"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintStart_toEndOf="@+id/etEntIdade"
+        app:layout_constraintTop_toBottomOf="@+id/etEntNum" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etEntSexo"
         android:layout_width="119dp"
         android:layout_height="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="72dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/etEntNum" />
 
     <TextView
         android:id="@+id/textView12"
@@ -188,22 +188,22 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
         android:text="Dia:"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText5"
+        app:layout_constraintEnd_toStartOf="@+id/etEntDia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/etEntDia"
         android:layout_width="70dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/etEntIdade" />
 
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/etEntHora"
         android:layout_width="119dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -211,6 +211,6 @@
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/etEntSexo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

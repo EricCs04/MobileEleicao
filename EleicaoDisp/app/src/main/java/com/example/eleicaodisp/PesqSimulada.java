@@ -40,7 +40,7 @@ public class PesqSimulada extends AppCompatActivity {
         btRegSimulada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Possivel fazer com switch case(Possivelmente melhor)
                 if(rbC1.isChecked()){
                   VarEleitoral.adicionarSimulado(rbC1.getText().toString());
 
