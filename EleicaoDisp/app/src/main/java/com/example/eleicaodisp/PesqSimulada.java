@@ -2,6 +2,7 @@ package com.example.eleicaodisp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class PesqSimulada extends AppCompatActivity {
 
+    //int kleberBombom, oscarAlho, juliaHRomeu, armandoP, mariana, branco, nulo, indeciso;
     RadioButton rbC1, rbC2, rbC3, rbC4, rbC5, rbBranco, rbNulo, rbIndeciso, rbNaoSabe;
     Button btRegSimulada;
 
@@ -38,6 +40,32 @@ public class PesqSimulada extends AppCompatActivity {
         btRegSimulada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(rbC1.isChecked()){
+                  VarEleitoral.adicionarSimulado(rbC1.getText().toString());
+
+                } else if (rbC2.isChecked()) {
+                    VarEleitoral.adicionarSimulado(rbC2.getText().toString());
+
+                } else if (rbC3.isChecked()) {
+                    VarEleitoral.adicionarSimulado(rbC3.getText().toString());
+
+                } else if (rbC4.isChecked()) {
+                    VarEleitoral.adicionarSimulado(rbC4.getText().toString());
+
+                } else if (rbC5.isChecked()) {
+                    VarEleitoral.adicionarSimulado(rbC5.getText().toString());
+
+                } else if (rbBranco.isChecked()) {
+                    VarEleitoral.adicionarSimulado(rbBranco.getText().toString());
+
+                } else if (rbNulo.isChecked()) {
+                    VarEleitoral.adicionarSimulado(rbNulo.getText().toString());
+
+                } else if (rbIndeciso.isChecked() || rbNaoSabe.isChecked()) {
+                    VarEleitoral.adicionarSimulado("Indeciso ou Não Sabe");
+                }
+
                 Intent cadastro = new Intent(PesqSimulada.this, InfoEntrevistado.class);
                 startActivity(cadastro);
                 finish();
