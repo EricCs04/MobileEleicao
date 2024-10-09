@@ -24,14 +24,15 @@ public class Resultado extends AppCompatActivity {
         tvSimulado = findViewById(R.id.tvSimulado);
         tvCandidatos = findViewById(R.id.tvCandidatos);
         try {
-            VarEleitoral varEleitoral = new VarEleitoral();
-            String nomesContadores = varEleitoral.getNomeCont();
-            String nomesSimulados = varEleitoral.getNomeSimulado();
+
+            String nomesContadores = VarEleitoral.getNomeCont();
+            String nomesSimulados = VarEleitoral.getNomeSimulado();
             tvSimulado.setText(nomesSimulados);
             tvCandidatos.setText(nomesContadores);
         } catch(Exception e){
             Log.e("Segunda Atividade", "ERRO:", e);
             tvCandidatos.setText("Erro ao carregar dados");
+            tvSimulado.setText("Erro ao carregar dados");
         }
 
 

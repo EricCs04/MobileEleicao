@@ -20,7 +20,7 @@ public class PesqEspont extends AppCompatActivity {
     Button btConEsp;
     EditText etRespEsp;
     VarEleitoral politico;
-    private static final int TEMPO_LEITURA = 1000;
+    private static final int TEMPO_LEITURA = 2000;
 
 
     @Override
