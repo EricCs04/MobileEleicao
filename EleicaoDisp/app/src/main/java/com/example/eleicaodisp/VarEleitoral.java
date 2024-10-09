@@ -20,6 +20,7 @@ public class VarEleitoral {
         contadorSimulado.put("Mariana",0);
         contadorSimulado.put("Branco",0);
         contadorSimulado.put("Nulo",0);
+
         contadorSimulado.put("Indeciso ou Não Sabe",0);
 
     }
