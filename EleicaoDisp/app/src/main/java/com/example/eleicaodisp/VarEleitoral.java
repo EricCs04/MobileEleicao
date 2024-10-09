@@ -37,6 +37,16 @@ public class VarEleitoral {
         }
     }
 
+    public static String getNomeSimulado(){
+        StringBuilder simulado = new StringBuilder();
+
+        for(Map.Entry<String, Integer> entrada: contadorSimulado.entrySet()){
+            simulado.append(entrada.getKey()).append(": ").append(entrada.getValue()).append("\n");
+        }
+        return simulado.toString();
+    }
+
+
     public static String getNomeCont(){
         StringBuilder candidato = new StringBuilder();
 

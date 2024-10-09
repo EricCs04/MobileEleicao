@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Resultado extends AppCompatActivity {
 
-    TextView tvCandidatos;
+    TextView tvCandidatos, tvSimulado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +21,13 @@ public class Resultado extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_resultado);
 
-
+        tvSimulado = findViewById(R.id.tvSimulado);
         tvCandidatos = findViewById(R.id.tvCandidatos);
         try {
             VarEleitoral varEleitoral = new VarEleitoral();
             String nomesContadores = varEleitoral.getNomeCont();
+            String nomesSimulados = varEleitoral.getNomeSimulado();
+            tvSimulado.setText(nomesSimulados);
             tvCandidatos.setText(nomesContadores);
         } catch(Exception e){
             Log.e("Segunda Atividade", "ERRO:", e);
