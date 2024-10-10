@@ -21,7 +21,7 @@ public class PesqSimulada extends AppCompatActivity {
 
     RadioButton rbC1, rbC2, rbC3, rbC4, rbC5, rbBranco, rbNulo, rbIndeciso, rbNaoSabe;
     Button btRegSimulada;
-    private static final int TEMPO_DELAY = 500;
+    private static final int TEMPO_DELAY = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,67 +45,74 @@ public class PesqSimulada extends AppCompatActivity {
         btRegSimulada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Possivel fazer com switch case(Possivelmente melhor)
                 if(rbC1.isChecked()){
                     try {
                         String nome = rbC1.getText().toString();
                         VarEleitoral.adicionarSimulado(nome);
+
                         proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
                 } else if (rbC2.isChecked()) {
                     try {
-                        String nome = rbC2.getText().toString();
+                        String nome = rbC2.getText().toString().trim();
                         VarEleitoral.adicionarSimulado(nome);
+
                         proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
                 } else if (rbC3.isChecked()) {
                     try {
-                        String nome = rbC3.getText().toString();
-                    VarEleitoral.adicionarSimulado(nome);
-                    proxAtividade();
+                        String nome = rbC3.getText().toString().trim();
+                        VarEleitoral.adicionarSimulado(nome);
+
+                        proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
                 } else if (rbC4.isChecked()) {
                     try {
-                        String nome = rbC4.getText().toString();
-                    VarEleitoral.adicionarSimulado(nome);
-                    proxAtividade();
+                        String nome = rbC4.getText().toString().trim();
+                        VarEleitoral.adicionarSimulado(nome);
+
+                        proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
                 } else if (rbC5.isChecked()) {
                     try {
-                        String nome = rbC5.getText().toString();
-                    VarEleitoral.adicionarSimulado(nome);
-                    proxAtividade();
+                        String nome = rbC5.getText().toString().trim();
+                        VarEleitoral.adicionarSimulado(nome);
+
+                        proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
                 } else if (rbBranco.isChecked()) {
                     try {
-                        String nome = rbBranco.getText().toString();
-                    VarEleitoral.adicionarSimulado(nome);
-                    proxAtividade();
+                        String nome = rbBranco.getText().toString().trim();
+                        VarEleitoral.adicionarSimulado(nome);
+
+                        proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
                 } else if (rbNulo.isChecked()) {
                     try {
                         String nome = rbNulo.getText().toString();
-                    VarEleitoral.adicionarSimulado(nome);
-                    proxAtividade();
+                        VarEleitoral.adicionarSimulado(nome);
+
+                        proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
                 } else if (rbIndeciso.isChecked() || rbNaoSabe.isChecked()) {
                     try {
-                    VarEleitoral.adicionarSimulado("Indeciso ou Não Sabe");
-                    proxAtividade();
+                        VarEleitoral.adicionarSimulado("Indeciso ou Não Sabe");
+
+                        proxAtividade();
                     }catch(Exception e){
                         Log.e("PesqSimulada", "Erro", e);
                     }
@@ -126,10 +133,17 @@ public class PesqSimulada extends AppCompatActivity {
         });
     }
     public void proxAtividade (){
+        AlertDialog confirmado = new AlertDialog.Builder(PesqSimulada.this).create();
+        confirmado.setTitle("ADICIONADO");
+        confirmado.setMessage("Seu voto foi adicionado.");
+        confirmado.show();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent cadastro = new Intent(PesqSimulada.this, InfoEntrevistado.class);
+                if (confirmado.isShowing()){
+                    confirmado.dismiss();
+                }
                 startActivity(cadastro);
                 finish();
             }

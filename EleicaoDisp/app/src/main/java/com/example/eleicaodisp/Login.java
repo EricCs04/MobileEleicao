@@ -20,7 +20,8 @@ public class Login extends AppCompatActivity {
 
      Button btConectar;
      EditText etUsuario, etSenha;
-     CadLogin usuario[] , senha[];
+    public static String[] usuario = {"admin", "entrevistado"};
+    public static String[] senha = {"admin" , "entrevistado"};
 
 
     @Override
@@ -38,8 +39,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 boolean loginBS= false;
 
-                for (int i = 0; i < CadLogin.usuario.length; i++) {
-                    if (etUsuario.getText().toString().equals(CadLogin.usuario[i]) && etSenha.getText().toString().equals(CadLogin.senha[i])) {
+                for (int i = 0; i < usuario.length; i++) {
+                    if (etUsuario.getText().toString().equals(usuario[i]) && etSenha.getText().toString().equals(senha[i])) {
                         loginBS = true;
                         if (etUsuario.getText().toString().equals("entrevistado")) {
                             Intent proxPage = new Intent(Login.this, PesqRes.class);

@@ -19,8 +19,7 @@ public class PesqEspont extends AppCompatActivity {
 
     Button btConEsp;
     EditText etRespEsp;
-    VarEleitoral politico;
-    private static final int TEMPO_LEITURA = 2000;
+    private static final int TEMPO_LEITURA = 1000;
 
 
     @Override
@@ -32,32 +31,52 @@ public class PesqEspont extends AppCompatActivity {
 
         etRespEsp = findViewById(R.id.etRespEsp);
         btConEsp = findViewById(R.id.btConEsp);
-        politico = new VarEleitoral();
+
 
 
         btConEsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                try {
-                    String nome = etRespEsp.getText().toString().trim();
-                    VarEleitoral.addNome(nome);
-                }catch(Exception e){
-                    Log.e("Pesq Espont", "Erro:", e);
-                }
-                AlertDialog confirmado = new AlertDialog.Builder(PesqEspont.this).create();
-                confirmado.setTitle("ADICIONADO");
-                confirmado.setMessage(etRespEsp.getText().toString()+ " foi adicionado.");
-                confirmado.show();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent simulado = new Intent(PesqEspont.this, PesqSimulada.class);
-                        startActivity(simulado);
-                        finish();
+                if(etRespEsp.getText().toString().trim().isEmpty()){
+                    try{
+                        AlertDialog erro = new AlertDialog.Builder(PesqEspont.this).create();
+                        erro.setTitle("Erro");
+                        erro.setMessage("Precisa inserir um valor");
+                        erro.show();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (erro.isShowing()) {
+                                    erro.dismiss(); // Fecha o diálogo
+                                }
+                            }
+                        }, 2000);
+                    }catch(Exception e){
+                        Log.e("Pesq Espont", "Erro:", e);
                     }
-                }, TEMPO_LEITURA);
-
+                } else {
+                    try {
+                        String nome = etRespEsp.getText().toString().trim();
+                        VarEleitoral.addNome(nome);
+                    } catch (Exception e) {
+                        Log.e("Pesq Espont", "Erro:", e);
+                    }
+                    AlertDialog confirmado = new AlertDialog.Builder(PesqEspont.this).create();
+                    confirmado.setTitle("ADICIONADO");
+                    confirmado.setMessage(etRespEsp.getText().toString() + " foi adicionado.");
+                    confirmado.show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent simulado = new Intent(PesqEspont.this, PesqSimulada.class);
+                            if (confirmado.isShowing()){
+                                confirmado.dismiss();
+                            }
+                            startActivity(simulado);
+                            finish();
+                        }
+                    }, TEMPO_LEITURA);
+                }
 
             }
         });
